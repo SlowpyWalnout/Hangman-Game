@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  background-color: bisque;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 10px;
+}
+
+.container {
+  width: 100%;
+  max-width: 850px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #fff;
+  padding: 60px 40px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  align-items: center;
+  overflow: hidden;
+}
+
+.hangman-box {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.hangman-box img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.hangman-box h1 {
+  font-size: 1.45rem;
+  margin: 20px 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.word-display {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.word-display .letter {
+  font-size: 1.5rem;
+  margin: 0 5px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-transform: uppercase;
+}
+
+.word-display .letter.guessed {
+  background-color: #f1c40f;
+  color: #fff;
+}
+
+.game-box {
+  width: 100%;
+}
+
+.game-box h4 {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.game-box h4 b {
+  font-weight: 600;
+}
+
+.game-box .guesses-text b {
+  color: darkred;
+  font-size: 1.2rem;
+}
+
+.game-box .keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: center;
+}
+
+.keyboard button {
+  flex: 1 0 calc(10% - 10px);
+  max-width: 50px;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.keyboard button:hover {
+  background-color: #f1c40f;
+  color: #fff;
+}
+
+.game-modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  flex-direction: column;
+  gap: 20px;
+}
+.content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+.game-modal img {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+}
+
+.game-modal h4 {
+  font-size: 2rem;
+  text-align: center;
+  margin: 20px 0;
+  text-transform: uppercase;
+}
+
+.game-modal button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.game-modal button:hover {
+  background-color: #f1c40f;
+  color: #fff;
+}
+
+.game-modal p {
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.game-modal p b {
+  color: darkred;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .container {
+    padding: 20px;
+  }
+
+  .hangman-box h1 {
+    font-size: 1.2rem;
+  }
+
+  .hangman-box img {
+    width: 80%;
+    height: 200px;
+  }
+
+  .word-display .letter {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 1.2rem;
+  }
+
+  .keyboard button {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+
+  .game-modal img {
+    width: 100%;
+    height: 300px;
+  }
+
+  .game-modal h4 {
+    font-size: 1.5rem;
+  }
+
+  .game-modal p {
+    font-size: 1rem;
+  }
+
+  .game-modal button {
+    font-size: 1rem;
+    padding: 10px 15px;
+  }
+}
