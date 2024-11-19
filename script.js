@@ -191,6 +191,8 @@ function resetGame() {
     selectedWord = selectedWordObj.word.toLowerCase();
     hint = selectedWordObj.hint;
 
+    hangmanImage.src = 'src/images/hangman-0.svg';
+
     lostModal.style.display = "none";
     winModal.style.display = "none";
     initializeGame();
